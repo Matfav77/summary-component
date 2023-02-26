@@ -1,16 +1,69 @@
+@mixin gradient-primary {
+    background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+}
+
+@mixin gradient-secondary {
+    background: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+}
+
+$pale-text: hsl(221, 100%, 96%);
+
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 500
 }
 
 .score {
-    background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+    @include gradient-primary();
+    padding: 1.5rem 3rem;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
     text-align: center;
     width: 100%;
+    color: $pale-text;
+
+    h2 {
+        opacity: .6;
+        font-size: 1rem;
+    }
+
+    &__display {
+        height: 8rem;
+        width: 8rem;
+        margin: 1.2rem auto;
+        font-size: 3rem;
+        font-weight: 700;
+        border-radius: 50%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        @include gradient-secondary();
+
+        &__total {
+            font-size: 1rem;
+            opacity: .4;
+        }
+    }
+
+    &__grade {
+        font-size: 1.5rem;
+    }
+
+    &__comparison {
+        font-size: .8rem;
+        margin: .8rem auto;
+        opacity: .6;
+    }
 }
