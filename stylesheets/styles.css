@@ -107,6 +107,7 @@ main {
   border-radius: 40px;
   color: white;
   background-color: hsl(224, 30%, 27%);
+  border: none;
 }
 .summary button:hover {
   background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));

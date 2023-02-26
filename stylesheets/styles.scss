@@ -147,6 +147,7 @@ main {
         border-radius: 40px;
         color: white;
         background-color: hsl(224, 30%, 27%);
+        border: none;
 
         &:hover {
             @include gradient-primary;
